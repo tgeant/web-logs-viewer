@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test web</title>
+		
+		<!-- VUEJS -->
+		<script src="js/vue"></script>
+		
+		<!-- Buefy CSS -->
+		<link rel="stylesheet" href="https://unpkg.com/buefy@0.6.6/lib/buefy.min.css" >
+
+		<!-- Buefy JavaScript -->
+		<script src="https://unpkg.com/buefy"></script>
+		
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		
+		<!-- icons -->
+		<link rel="stylesheet" href="//cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css">
+		
+    </head>
+ 
+    <body>
+	
+	<div id="app" class="container">
+    <section>
+        <b-table
+            :data="data"
+            :loading="loading"
+
+            paginated
+            backend-pagination
+            :total="total"
+            :per-page="perPage"
+            @page-change="onPageChange"
+
+            backend-sorting
+            :default-sort-direction="defaultSortOrder"
+            :default-sort="[sortField, sortOrder]"
+            @sort="onSort">
+
+            <template slot-scope="props">
+<b-table-column field="user_id" label="User" numeric sortable>
+    {{ props.row.userId }}
+</b-table-column>
+
+<b-table-column field="vote_average" label="Id" numeric sortable>
+        {{ props.row.id }}
+</b-table-column>
+
+<b-table-column field="vote_count" label="Title" sortable>
+     {{ props.row.title }}
+</b-table-column>
+
+<b-table-column field="release_date" label="Description" sortable>
+    {{ props.row.body }}
+</b-table-column>
+
+            </template>
+        </b-table>
+    </section>
+
+</div>
+
+
+
+
+<script src="js/application"></script>
+    </body>
+</html>

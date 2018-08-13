@@ -1,0 +1,3 @@
+SERVER_PORT=9595
+SERVER_MODE=prod
+SERVER_NAME=logs_viewer
